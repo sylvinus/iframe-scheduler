@@ -1,0 +1,15 @@
+{
+  "name": "iframe-scheduler",
+  "fullName": "iframe Scheduler",
+  "version": "0.0.1",
+  "description": "Allows you to control the location of a fullscreen iframe with an iCal calendar for instance. This template can then be used as a scheduler switching between several apps regularly.",
+  "joshfire": {
+    "datasources":{
+      "calendar":{
+        "title":"Calendar",
+        "description":"Use an iCal with URLs in the item descriptions or titles"
+      }
+    },
+    "startfile":"index.html"
+  }
+}
