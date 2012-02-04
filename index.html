@@ -1,10 +1,9 @@
 <html>
 <head>
-	<script src="http://factory.joshfire.com/bootstrap/4f2a5a74479ebd0100000f96/auto/auto/" data-joshfire-bootstrap></script>
+	<script data-joshfire-bootstrap  src="http://localhost:40021/bootstrap/4f2c1f3e69f4ae0000000142/4f2c1fd169f4ae0000000373/phone/"></script>
 
 	<script>
-
-
+	
 		var toDate = function (string) {
 			var regexp = "([0-9]{4})(-([0-9]{2})(-([0-9]{2})" +
 	        "(T([0-9]{2}):([0-9]{2})(:([0-9]{2})(\.([0-9]+))?)?" +
@@ -13,6 +12,7 @@
 
 			var offset = 0;
 			var date = new Date(d[1], 0, 1);
+			
 
 		    if (d[3]) { date.setMonth(d[3] - 1); }
 		    if (d[5]) { date.setDate(d[5]); }
@@ -40,7 +40,7 @@
 		};
 
 		var processEntry = function(foundInterval) {
-		
+			
 			//Blank screen ?
 			if (!foundInterval) {
 				switchToUrl("");
@@ -81,9 +81,10 @@
 				var entry,startDate,endDate;
 				for (var i=0;i<data.entries.length && !foundInterval;i++) {
 					entry = data.entries[i];
-					startDate = toDate(entry.startDate);
-					endDate = toDate(entry.endDate);
-						
+					
+					startDate = +toDate(entry.startDate);
+					endDate = +toDate(entry.endDate);
+
 					if (startDate<=currentDate && currentDate<endDate) {
 						foundInterval = entry;
 
